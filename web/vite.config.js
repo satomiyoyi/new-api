@@ -71,6 +71,18 @@ export default defineConfig({
           'react-core': ['react', 'react-dom', 'react-router-dom'],
           'semi-ui': ['@douyinfe/semi-icons', '@douyinfe/semi-ui'],
           tools: ['axios', 'history', 'marked'],
+          VChart: ['@visactor/vchart', '@visactor/react-vchart'],
+          mermaid: ['mermaid'],
+          markdown: [
+            'react-markdown',
+            'rehype-highlight',
+            'rehype-katex',
+            'remark-breaks',
+            'remark-gfm',
+            'remark-math',
+            'katex',
+          ],
+          'lobe-icons': ['@lobehub/icons'],
           'react-components': [
             'react-dropzone',
             'react-fireworks',

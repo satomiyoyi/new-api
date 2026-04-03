@@ -49,6 +49,7 @@ const routerMap = {
   deployment: '/console/deployment',
   playground: '/console/playground',
   personal: '/console/personal',
+  monitor: '/console/monitor',
 };
 
 const SiderBar = ({ onNavigate = () => {} }) => {
@@ -188,6 +189,12 @@ const SiderBar = ({ onNavigate = () => {} }) => {
         itemKey: 'setting',
         to: '/setting',
         className: isRoot() ? '' : 'tableHiddle',
+      },
+      {
+        text: t('监控面板'),
+        itemKey: 'monitor',
+        to: '/monitor',
+        className: isAdmin() ? '' : 'tableHiddle',
       },
     ];
 
