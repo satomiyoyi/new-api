@@ -340,6 +340,19 @@ func SetApiRouter(router *gin.Engine) {
 			vendorRoute.DELETE("/:id", controller.DeleteVendorMeta)
 		}
 
+		monitorRoute := apiRouter.Group("/monitor")
+		monitorRoute.Use(middleware.AdminAuth())
+		{
+			monitorRoute.GET("/overview", controller.GetMonitorOverview)
+			monitorRoute.GET("/system", controller.GetMonitorSystem)
+			monitorRoute.GET("/channels", controller.GetMonitorChannels)
+			monitorRoute.GET("/models", controller.GetMonitorModels)
+			monitorRoute.GET("/trends", controller.GetMonitorTrends)
+			monitorRoute.GET("/latency", controller.GetMonitorLatency)
+			monitorRoute.GET("/top_users", controller.GetMonitorTopUsers)
+			monitorRoute.GET("/errors", controller.GetMonitorErrors)
+		}
+
 		modelsRoute := apiRouter.Group("/models")
 		modelsRoute.Use(middleware.AdminAuth())
 		{
